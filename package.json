@@ -1,7 +1,7 @@
 {
-  "name": "react-native-doordeck-sdk",
+  "name": "@doordeck/react-native-doordeck-sdk",
   "title": "React Native Doordeck Sdk",
-  "version": "1.0.0-beta",
+  "version": "1.0.3-beta",
   "description": "React Native wrapper for the Doordeck SDK.",
   "main": "index.js",
   "scripts": {
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/doordeck/doordeck-sdk-react-nativet",
+    "url": "git+https://github.com/doordeck/doordeck-sdk-react-native.git",
     "baseUrl": "https://github.com/doordeck/doordeck-sdk-react-native"
   },
   "keywords": [
@@ -18,13 +18,9 @@
     "react-native",
     "access control"
   ],
-  "author": {
-    "name": "doordeck",
-    "email": "development@doordeck.com"
-  },
+  "author": "doordeck <development@doordeck.com>",
   "license": "Apache-2.0",
   "licenseFilename": "LICENSE",
-  "readmeFilename": "README.md",
   "peerDependencies": {
     "react": "16.2.0",
     "react-native": "^0.52.0"
@@ -32,5 +28,10 @@
   "devDependencies": {
     "react": "16.2.0",
     "react-native": "^0.52.0"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/doordeck/doordeck-sdk-react-native/issues"
+  },
+  "homepage": "https://doordeck.com",
+  "dependencies": {}
 }

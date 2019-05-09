@@ -8,7 +8,7 @@ CocaoPods
 
 ## Getting started
 
-`$ npm install react-native-doordeck-sdk --save`
+`$ npm install @doordeck/react-native-doordeck-sdk --save`
 
 ### Mostly automatic installation
 
