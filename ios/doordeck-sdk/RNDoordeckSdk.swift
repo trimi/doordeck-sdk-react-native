@@ -18,8 +18,6 @@ class RNDoordeckSdk: NSObject {
     doordeck = Doordeck(authToken)
     doordeck.delegate = self
     doordeck.Initialize()
-//    print(auth)
-//    print(auth)
   }
   
   @objc func showUnlock() {
@@ -30,7 +28,6 @@ class RNDoordeckSdk: NSObject {
         print("fail")
       }
     }
-//    print("showUnlock")
   }
   
 }
