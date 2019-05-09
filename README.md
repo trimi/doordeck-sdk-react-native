@@ -20,7 +20,7 @@ Coming soon - for now see manual install for now
 #### iOS
 
 1. In XCode, in the project navigator, right click `[your project's folder]` ➜ `Add Files to [your project's name]`
-2. Go to `node_modules` ➜ `react-native-doordeck-sdk/ios` and add folder `doordeck-sdk`
+2. Go to `node_modules` ➜ `@doordeck/react-native-doordeck-sdk/ios` and add folder `doordeck-sdk`
 3. In XCode, in the project navigator, select your project. Set your Swift Language Version to `Swift 5` in your project's `Build Settings` ➜ `Swift Language Version`
 4. Add pod dependencies:
 	Navigate in a terminal to your `[your react native project's folder]` ➜ `/ios`. 
@@ -52,7 +52,7 @@ Coming soon
 
 ## Usage
 ```javascript
-import doordeckSdk from 'react-native-doordeck-sdk';
+import doordeckSdk from '@doordeck/react-native-doordeck-sdk';
 
 // Initialise the SDK with your AuthToken
 doordeckSdk.initDoordeck(authToken)
