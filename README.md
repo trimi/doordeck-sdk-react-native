@@ -4,7 +4,7 @@
 
 CocaoPods
 
-`sudo gem install cocoapods`
+`$ sudo gem install cocoapods`
 
 ## Getting started
 
@@ -33,7 +33,7 @@ Coming soon - for now see manual install for now
 		pod "Alamofire", "~> 4.8"
 		pod "Cache", "~> 5.2"
 		pod "Sodium", "~> 0.8"
-		
+
 	In terminal run `$ pod install`
 5. Add permissions:
 	Add the following to your project plist.
@@ -43,7 +43,7 @@ Coming soon - for now see manual install for now
 		“Privacy - Location When In Use Usage Description” -> “NSLocationAlwaysAndWhenInUseUsageDescription”
 
 	To use NFC, turn on in your project settings `Capablities` ➜ `Near Field Communication Tag Reading`
-5. Run your project (`Cmd+R`)<
+5. Run your project (`Cmd+R`)
 
 #### Android
 

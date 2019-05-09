@@ -2,15 +2,15 @@
   "name": "react-native-doordeck-sdk",
   "title": "React Native Doordeck Sdk",
   "version": "1.0.0-beta",
-  "description": "",
+  "description": "React Native wrapper for the Doordeck SDK.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/github_account/react-native-doordeck-sdk.git",
-    "baseUrl": "https://github.com/github_account/react-native-doordeck-sdk"
+    "url": "git+https://github.com/doordeck/doordeck-sdk-react-nativet",
+    "baseUrl": "https://github.com/doordeck/doordeck-sdk-react-native"
   },
   "keywords": [
     "doordeck",
