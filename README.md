@@ -26,12 +26,14 @@ Coming soon - for now see manual install for now
 	Navigate in a terminal to your `[your react native project's folder]` ➜ `/ios`. 
 	If there isn't a podfile you need to set it up by running 
 	`$ pod init`. In Xcode, edit the podfile and add the following lines under # Pods for [your project's name]:
+		
 		platform: ios, "10.0"
 		pod "QRCodeReader.swift", "~> 10.0"
 		pod "ReachabilitySwift", "~> 4.3"
 		pod "Alamofire", "~> 4.8"
 		pod "Cache", "~> 5.2"
 		pod "Sodium", "~> 0.8"
+		
 	In terminal run `$ pod install`
 5. Add permissions:
 	Add the following to your project plist.
