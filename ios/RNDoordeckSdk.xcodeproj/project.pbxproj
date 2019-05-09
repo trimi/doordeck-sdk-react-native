@@ -1,0 +1,588 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F396B96D228388A900C8ED1A /* RNDoordeckSdk.m in Sources */ = {isa = PBXBuildFile; fileRef = F396B96A228388A900C8ED1A /* RNDoordeckSdk.m */; };
+		F396BE7722838CEF00C8ED1A /* RNDoordeckSdk.swift in Sources */ = {isa = PBXBuildFile; fileRef = F396B96C228388A900C8ED1A /* RNDoordeckSdk.swift */; };
+		F396BFD222842CBB00C8ED1A /* SwiftyTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F396BF9822842CBB00C8ED1A /* SwiftyTimer.swift */; };
+		F396BFD322842CBB00C8ED1A /* FontStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F396BF9922842CBB00C8ED1A /* FontStyle.swift */; };
+		F396BFD422842CBB00C8ED1A /* CacheHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F396BF9A22842CBB00C8ED1A /* CacheHelper.swift */; };
+		F396BFD522842CBB00C8ED1A /* NotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F396BF9B22842CBB00C8ED1A /* NotificationCenter.swift */; };
+		F396BFD622842CBB00C8ED1A /* UimageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F396BF9C22842CBB00C8ED1A /* UimageViewExtension.swift */; };
+		F396BFD722842CBB00C8ED1A /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = F396BF9D22842CBB00C8ED1A /* Util.swift */; };
+		F396BFD822842CBB00C8ED1A /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = F396BF9E22842CBB00C8ED1A /* UserDefaults.swift */; };
+		F396BFD922842CBB00C8ED1A /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F396BF9F22842CBB00C8ED1A /* StringExtension.swift */; };
+		F396BFDA22842CBB00C8ED1A /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = F396BFA022842CBB00C8ED1A /* Font.swift */; };
+		F396BFDB22842CBB00C8ED1A /* SDKEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F396BFA122842CBB00C8ED1A /* SDKEvent.swift */; };
+		F396BFDC22842CBB00C8ED1A /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = F396BFA222842CBB00C8ED1A /* UIApplication.swift */; };
+		F396BFDD22842CBB00C8ED1A /* LabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F396BFA322842CBB00C8ED1A /* LabelExtension.swift */; };
+		F396BFDE22842CBB00C8ED1A /* JsonHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F396BFA422842CBB00C8ED1A /* JsonHelper.swift */; };
+		F396BFDF22842CBB00C8ED1A /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F396BFA522842CBB00C8ED1A /* DateExtension.swift */; };
+		F396BFE022842CBB00C8ED1A /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = F396BFA622842CBB00C8ED1A /* Button.swift */; };
+		F396BFE122842CBB00C8ED1A /* UIApplicationiOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F396BFA722842CBB00C8ED1A /* UIApplicationiOS.swift */; };
+		F396BFE222842CBB00C8ED1A /* CertificateChainClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F396BFA922842CBB00C8ED1A /* CertificateChainClass.swift */; };
+		F396BFE322842CBB00C8ED1A /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F396BFAA22842CBB00C8ED1A /* KeychainHelper.swift */; };
+		F396BFE422842CBB00C8ED1A /* TokenHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F396BFAB22842CBB00C8ED1A /* TokenHelper.swift */; };
+		F396BFE522842CBB00C8ED1A /* SodiumHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F396BFAC22842CBB00C8ED1A /* SodiumHelper.swift */; };
+		F396BFE622842CBB00C8ED1A /* AuthTokenClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F396BFAD22842CBB00C8ED1A /* AuthTokenClass.swift */; };
+		F396BFE722842CBB00C8ED1A /* AFRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F396BFAF22842CBB00C8ED1A /* AFRequest.swift */; };
+		F396BFE822842CBB00C8ED1A /* ReachabilityHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F396BFB022842CBB00C8ED1A /* ReachabilityHelper.swift */; };
+		F396BFE922842CBB00C8ED1A /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F396BFB122842CBB00C8ED1A /* APIClient.swift */; };
+		F396BFEA22842CBB00C8ED1A /* QueryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F396BFB422842CBB00C8ED1A /* QueryManager.swift */; };
+		F396BFEB22842CBB00C8ED1A /* URLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F396BFB522842CBB00C8ED1A /* URLManager.swift */; };
+		F396BFEC22842CBB00C8ED1A /* Sites.swift in Sources */ = {isa = PBXBuildFile; fileRef = F396BFB722842CBB00C8ED1A /* Sites.swift */; };
+		F396BFED22842CBB00C8ED1A /* LockManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F396BFB822842CBB00C8ED1A /* LockManager.swift */; };
+		F396BFEE22842CBB00C8ED1A /* LockDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F396BFB922842CBB00C8ED1A /* LockDevice.swift */; };
+		F396BFEF22842CBB00C8ED1A /* WhereAmI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F396BFBC22842CBB00C8ED1A /* WhereAmI.swift */; };
+		F396BFF022842CBB00C8ED1A /* LocationProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F396BFBD22842CBB00C8ED1A /* LocationProfile.swift */; };
+		F396BFF122842CBB00C8ED1A /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F396BFBF22842CBB00C8ED1A /* UIColor.swift */; };
+		F396BFF222842CBB00C8ED1A /* InitializeDoordeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = F396BFC022842CBB00C8ED1A /* InitializeDoordeck.swift */; };
+		F396BFF322842CBB00C8ED1A /* LockUnlockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F396BFC222842CBB00C8ED1A /* LockUnlockViewController.swift */; };
+		F396BFF422842CBB00C8ED1A /* QuickEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F396BFC722842CBB00C8ED1A /* QuickEntryViewController.swift */; };
+		F396BFF522842CBB00C8ED1A /* BottomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F396BFC822842CBB00C8ED1A /* BottomViewController.swift */; };
+		F396BFF622842CBB00C8ED1A /* BottomViewControllerQR.swift in Sources */ = {isa = PBXBuildFile; fileRef = F396BFC922842CBB00C8ED1A /* BottomViewControllerQR.swift */; };
+		F396BFF722842CBB00C8ED1A /* AppStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F396BFCB22842CBB00C8ED1A /* AppStrings.swift */; };
+		F396BFF822842CBB00C8ED1A /* DeviceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F396BFCC22842CBB00C8ED1A /* DeviceHelper.swift */; };
+		F396BFF922842CBB00C8ED1A /* CustomPrint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F396BFCD22842CBB00C8ED1A /* CustomPrint.swift */; };
+		F396BFFA22842CBB00C8ED1A /* VerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F396BFCF22842CBB00C8ED1A /* VerificationViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		58B511D91A9E6C8500147676 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		134814201AA4EA6300B7C361 /* libRNDoordeckSdk.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNDoordeckSdk.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F396B969228388A800C8ED1A /* RNDoordeckSdk-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RNDoordeckSdk-Bridging-Header.h"; sourceTree = "<group>"; };
+		F396B96A228388A900C8ED1A /* RNDoordeckSdk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNDoordeckSdk.m; sourceTree = "<group>"; };
+		F396B96B228388A900C8ED1A /* RNDoordeckSdk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNDoordeckSdk.h; sourceTree = "<group>"; };
+		F396B96C228388A900C8ED1A /* RNDoordeckSdk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RNDoordeckSdk.swift; sourceTree = "<group>"; };
+		F396BF9622842CBB00C8ED1A /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		F396BF9822842CBB00C8ED1A /* SwiftyTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyTimer.swift; sourceTree = "<group>"; };
+		F396BF9922842CBB00C8ED1A /* FontStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontStyle.swift; sourceTree = "<group>"; };
+		F396BF9A22842CBB00C8ED1A /* CacheHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheHelper.swift; sourceTree = "<group>"; };
+		F396BF9B22842CBB00C8ED1A /* NotificationCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationCenter.swift; sourceTree = "<group>"; };
+		F396BF9C22842CBB00C8ED1A /* UimageViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UimageViewExtension.swift; sourceTree = "<group>"; };
+		F396BF9D22842CBB00C8ED1A /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		F396BF9E22842CBB00C8ED1A /* UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		F396BF9F22842CBB00C8ED1A /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		F396BFA022842CBB00C8ED1A /* Font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		F396BFA122842CBB00C8ED1A /* SDKEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDKEvent.swift; sourceTree = "<group>"; };
+		F396BFA222842CBB00C8ED1A /* UIApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		F396BFA322842CBB00C8ED1A /* LabelExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelExtension.swift; sourceTree = "<group>"; };
+		F396BFA422842CBB00C8ED1A /* JsonHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonHelper.swift; sourceTree = "<group>"; };
+		F396BFA522842CBB00C8ED1A /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		F396BFA622842CBB00C8ED1A /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		F396BFA722842CBB00C8ED1A /* UIApplicationiOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplicationiOS.swift; sourceTree = "<group>"; };
+		F396BFA922842CBB00C8ED1A /* CertificateChainClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CertificateChainClass.swift; sourceTree = "<group>"; };
+		F396BFAA22842CBB00C8ED1A /* KeychainHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
+		F396BFAB22842CBB00C8ED1A /* TokenHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenHelper.swift; sourceTree = "<group>"; };
+		F396BFAC22842CBB00C8ED1A /* SodiumHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SodiumHelper.swift; sourceTree = "<group>"; };
+		F396BFAD22842CBB00C8ED1A /* AuthTokenClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthTokenClass.swift; sourceTree = "<group>"; };
+		F396BFAF22842CBB00C8ED1A /* AFRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AFRequest.swift; sourceTree = "<group>"; };
+		F396BFB022842CBB00C8ED1A /* ReachabilityHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReachabilityHelper.swift; sourceTree = "<group>"; };
+		F396BFB122842CBB00C8ED1A /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		F396BFB322842CBB00C8ED1A /* AmazonRootCA1.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = AmazonRootCA1.cer; sourceTree = "<group>"; };
+		F396BFB422842CBB00C8ED1A /* QueryManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryManager.swift; sourceTree = "<group>"; };
+		F396BFB522842CBB00C8ED1A /* URLManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLManager.swift; sourceTree = "<group>"; };
+		F396BFB722842CBB00C8ED1A /* Sites.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sites.swift; sourceTree = "<group>"; };
+		F396BFB822842CBB00C8ED1A /* LockManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockManager.swift; sourceTree = "<group>"; };
+		F396BFB922842CBB00C8ED1A /* LockDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockDevice.swift; sourceTree = "<group>"; };
+		F396BFBC22842CBB00C8ED1A /* WhereAmI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhereAmI.swift; sourceTree = "<group>"; };
+		F396BFBD22842CBB00C8ED1A /* LocationProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationProfile.swift; sourceTree = "<group>"; };
+		F396BFBF22842CBB00C8ED1A /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		F396BFC022842CBB00C8ED1A /* InitializeDoordeck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitializeDoordeck.swift; sourceTree = "<group>"; };
+		F396BFC222842CBB00C8ED1A /* LockUnlockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockUnlockViewController.swift; sourceTree = "<group>"; };
+		F396BFC422842CBB00C8ED1A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LockUnlockScreen.storyboard; sourceTree = "<group>"; };
+		F396BFC622842CBB00C8ED1A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/QuickEntryStoryboard.storyboard; sourceTree = "<group>"; };
+		F396BFC722842CBB00C8ED1A /* QuickEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickEntryViewController.swift; sourceTree = "<group>"; };
+		F396BFC822842CBB00C8ED1A /* BottomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomViewController.swift; sourceTree = "<group>"; };
+		F396BFC922842CBB00C8ED1A /* BottomViewControllerQR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomViewControllerQR.swift; sourceTree = "<group>"; };
+		F396BFCB22842CBB00C8ED1A /* AppStrings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStrings.swift; sourceTree = "<group>"; };
+		F396BFCC22842CBB00C8ED1A /* DeviceHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceHelper.swift; sourceTree = "<group>"; };
+		F396BFCD22842CBB00C8ED1A /* CustomPrint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPrint.swift; sourceTree = "<group>"; };
+		F396BFCF22842CBB00C8ED1A /* VerificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationViewController.swift; sourceTree = "<group>"; };
+		F396BFD022842CBB00C8ED1A /* VerificationStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = VerificationStoryboard.storyboard; sourceTree = "<group>"; };
+		F396BFD122842CBB00C8ED1A /* doordeck_sdk_swift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = doordeck_sdk_swift.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		58B511D81A9E6C8500147676 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		134814211AA4EA7D00B7C361 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				134814201AA4EA6300B7C361 /* libRNDoordeckSdk.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		58B511D21A9E6C8500147676 = {
+			isa = PBXGroup;
+			children = (
+				F3AFAD6C22843A08006E8224 /* doordeck-sdk */,
+				134814211AA4EA7D00B7C361 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F396BF9522842CBB00C8ED1A /* doordeck-sdk-swift */ = {
+			isa = PBXGroup;
+			children = (
+				F396BF9622842CBB00C8ED1A /* Media.xcassets */,
+				F396BF9722842CBB00C8ED1A /* Util */,
+				F396BFA822842CBB00C8ED1A /* Security */,
+				F396BFAE22842CBB00C8ED1A /* Network */,
+				F396BFB622842CBB00C8ED1A /* Lock */,
+				F396BFBA22842CBB00C8ED1A /* Dependencies */,
+				F396BFBE22842CBB00C8ED1A /* Styles */,
+				F396BFC022842CBB00C8ED1A /* InitializeDoordeck.swift */,
+				F396BFC122842CBB00C8ED1A /* Quick Entry */,
+				F396BFCA22842CBB00C8ED1A /* Aux */,
+				F396BFCE22842CBB00C8ED1A /* Verification Screen */,
+				F396BFD122842CBB00C8ED1A /* doordeck_sdk_swift.h */,
+			);
+			path = "doordeck-sdk-swift";
+			sourceTree = "<group>";
+		};
+		F396BF9722842CBB00C8ED1A /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				F396BF9822842CBB00C8ED1A /* SwiftyTimer.swift */,
+				F396BF9922842CBB00C8ED1A /* FontStyle.swift */,
+				F396BF9A22842CBB00C8ED1A /* CacheHelper.swift */,
+				F396BF9B22842CBB00C8ED1A /* NotificationCenter.swift */,
+				F396BF9C22842CBB00C8ED1A /* UimageViewExtension.swift */,
+				F396BF9D22842CBB00C8ED1A /* Util.swift */,
+				F396BF9E22842CBB00C8ED1A /* UserDefaults.swift */,
+				F396BF9F22842CBB00C8ED1A /* StringExtension.swift */,
+				F396BFA022842CBB00C8ED1A /* Font.swift */,
+				F396BFA122842CBB00C8ED1A /* SDKEvent.swift */,
+				F396BFA222842CBB00C8ED1A /* UIApplication.swift */,
+				F396BFA322842CBB00C8ED1A /* LabelExtension.swift */,
+				F396BFA422842CBB00C8ED1A /* JsonHelper.swift */,
+				F396BFA522842CBB00C8ED1A /* DateExtension.swift */,
+				F396BFA622842CBB00C8ED1A /* Button.swift */,
+				F396BFA722842CBB00C8ED1A /* UIApplicationiOS.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		F396BFA822842CBB00C8ED1A /* Security */ = {
+			isa = PBXGroup;
+			children = (
+				F396BFA922842CBB00C8ED1A /* CertificateChainClass.swift */,
+				F396BFAA22842CBB00C8ED1A /* KeychainHelper.swift */,
+				F396BFAB22842CBB00C8ED1A /* TokenHelper.swift */,
+				F396BFAC22842CBB00C8ED1A /* SodiumHelper.swift */,
+				F396BFAD22842CBB00C8ED1A /* AuthTokenClass.swift */,
+			);
+			path = Security;
+			sourceTree = "<group>";
+		};
+		F396BFAE22842CBB00C8ED1A /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				F396BFAF22842CBB00C8ED1A /* AFRequest.swift */,
+				F396BFB022842CBB00C8ED1A /* ReachabilityHelper.swift */,
+				F396BFB122842CBB00C8ED1A /* APIClient.swift */,
+				F396BFB222842CBB00C8ED1A /* CER */,
+				F396BFB422842CBB00C8ED1A /* QueryManager.swift */,
+				F396BFB522842CBB00C8ED1A /* URLManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		F396BFB222842CBB00C8ED1A /* CER */ = {
+			isa = PBXGroup;
+			children = (
+				F396BFB322842CBB00C8ED1A /* AmazonRootCA1.cer */,
+			);
+			path = CER;
+			sourceTree = "<group>";
+		};
+		F396BFB622842CBB00C8ED1A /* Lock */ = {
+			isa = PBXGroup;
+			children = (
+				F396BFB722842CBB00C8ED1A /* Sites.swift */,
+				F396BFB822842CBB00C8ED1A /* LockManager.swift */,
+				F396BFB922842CBB00C8ED1A /* LockDevice.swift */,
+			);
+			path = Lock;
+			sourceTree = "<group>";
+		};
+		F396BFBA22842CBB00C8ED1A /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				F396BFBB22842CBB00C8ED1A /* WhereAmI */,
+			);
+			path = Dependencies;
+			sourceTree = "<group>";
+		};
+		F396BFBB22842CBB00C8ED1A /* WhereAmI */ = {
+			isa = PBXGroup;
+			children = (
+				F396BFBC22842CBB00C8ED1A /* WhereAmI.swift */,
+				F396BFBD22842CBB00C8ED1A /* LocationProfile.swift */,
+			);
+			path = WhereAmI;
+			sourceTree = "<group>";
+		};
+		F396BFBE22842CBB00C8ED1A /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				F396BFBF22842CBB00C8ED1A /* UIColor.swift */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
+		F396BFC122842CBB00C8ED1A /* Quick Entry */ = {
+			isa = PBXGroup;
+			children = (
+				F396BFC222842CBB00C8ED1A /* LockUnlockViewController.swift */,
+				F396BFC322842CBB00C8ED1A /* LockUnlockScreen.storyboard */,
+				F396BFC522842CBB00C8ED1A /* QuickEntryStoryboard.storyboard */,
+				F396BFC722842CBB00C8ED1A /* QuickEntryViewController.swift */,
+				F396BFC822842CBB00C8ED1A /* BottomViewController.swift */,
+				F396BFC922842CBB00C8ED1A /* BottomViewControllerQR.swift */,
+			);
+			path = "Quick Entry";
+			sourceTree = "<group>";
+		};
+		F396BFCA22842CBB00C8ED1A /* Aux */ = {
+			isa = PBXGroup;
+			children = (
+				F396BFCB22842CBB00C8ED1A /* AppStrings.swift */,
+				F396BFCC22842CBB00C8ED1A /* DeviceHelper.swift */,
+				F396BFCD22842CBB00C8ED1A /* CustomPrint.swift */,
+			);
+			path = Aux;
+			sourceTree = "<group>";
+		};
+		F396BFCE22842CBB00C8ED1A /* Verification Screen */ = {
+			isa = PBXGroup;
+			children = (
+				F396BFCF22842CBB00C8ED1A /* VerificationViewController.swift */,
+				F396BFD022842CBB00C8ED1A /* VerificationStoryboard.storyboard */,
+			);
+			path = "Verification Screen";
+			sourceTree = "<group>";
+		};
+		F3AFAD6C22843A08006E8224 /* doordeck-sdk */ = {
+			isa = PBXGroup;
+			children = (
+				F396BF9522842CBB00C8ED1A /* doordeck-sdk-swift */,
+				F396B96B228388A900C8ED1A /* RNDoordeckSdk.h */,
+				F396B96A228388A900C8ED1A /* RNDoordeckSdk.m */,
+				F396B96C228388A900C8ED1A /* RNDoordeckSdk.swift */,
+				F396B969228388A800C8ED1A /* RNDoordeckSdk-Bridging-Header.h */,
+			);
+			path = "doordeck-sdk";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		58B511DA1A9E6C8500147676 /* RNDoordeckSdk */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 58B511EF1A9E6C8500147676 /* Build configuration list for PBXNativeTarget "RNDoordeckSdk" */;
+			buildPhases = (
+				58B511D71A9E6C8500147676 /* Sources */,
+				58B511D81A9E6C8500147676 /* Frameworks */,
+				58B511D91A9E6C8500147676 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RNDoordeckSdk;
+			productName = RCTDataManager;
+			productReference = 134814201AA4EA6300B7C361 /* libRNDoordeckSdk.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		58B511D31A9E6C8500147676 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = Facebook;
+				TargetAttributes = {
+					58B511DA1A9E6C8500147676 = {
+						CreatedOnToolsVersion = 6.1.1;
+						LastSwiftMigration = 1020;
+					};
+				};
+			};
+			buildConfigurationList = 58B511D61A9E6C8500147676 /* Build configuration list for PBXProject "RNDoordeckSdk" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				English,
+				en,
+				Base,
+			);
+			mainGroup = 58B511D21A9E6C8500147676;
+			productRefGroup = 58B511D21A9E6C8500147676;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				58B511DA1A9E6C8500147676 /* RNDoordeckSdk */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		58B511D71A9E6C8500147676 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F396BFDD22842CBB00C8ED1A /* LabelExtension.swift in Sources */,
+				F396BFF322842CBB00C8ED1A /* LockUnlockViewController.swift in Sources */,
+				F396BFDC22842CBB00C8ED1A /* UIApplication.swift in Sources */,
+				F396BFF622842CBB00C8ED1A /* BottomViewControllerQR.swift in Sources */,
+				F396BFE722842CBB00C8ED1A /* AFRequest.swift in Sources */,
+				F396BFEE22842CBB00C8ED1A /* LockDevice.swift in Sources */,
+				F396BFE122842CBB00C8ED1A /* UIApplicationiOS.swift in Sources */,
+				F396BFE322842CBB00C8ED1A /* KeychainHelper.swift in Sources */,
+				F396BFD222842CBB00C8ED1A /* SwiftyTimer.swift in Sources */,
+				F396BFDB22842CBB00C8ED1A /* SDKEvent.swift in Sources */,
+				F396BFF522842CBB00C8ED1A /* BottomViewController.swift in Sources */,
+				F396BFDA22842CBB00C8ED1A /* Font.swift in Sources */,
+				F396BFE222842CBB00C8ED1A /* CertificateChainClass.swift in Sources */,
+				F396BFE922842CBB00C8ED1A /* APIClient.swift in Sources */,
+				F396BFD522842CBB00C8ED1A /* NotificationCenter.swift in Sources */,
+				F396BFD922842CBB00C8ED1A /* StringExtension.swift in Sources */,
+				F396BFD422842CBB00C8ED1A /* CacheHelper.swift in Sources */,
+				F396BFEB22842CBB00C8ED1A /* URLManager.swift in Sources */,
+				F396BFD722842CBB00C8ED1A /* Util.swift in Sources */,
+				F396BFEA22842CBB00C8ED1A /* QueryManager.swift in Sources */,
+				F396BFE622842CBB00C8ED1A /* AuthTokenClass.swift in Sources */,
+				F396BFDF22842CBB00C8ED1A /* DateExtension.swift in Sources */,
+				F396BFDE22842CBB00C8ED1A /* JsonHelper.swift in Sources */,
+				F396BFEC22842CBB00C8ED1A /* Sites.swift in Sources */,
+				F396BE7722838CEF00C8ED1A /* RNDoordeckSdk.swift in Sources */,
+				F396BFD822842CBB00C8ED1A /* UserDefaults.swift in Sources */,
+				F396BFF122842CBB00C8ED1A /* UIColor.swift in Sources */,
+				F396BFF222842CBB00C8ED1A /* InitializeDoordeck.swift in Sources */,
+				F396BFF422842CBB00C8ED1A /* QuickEntryViewController.swift in Sources */,
+				F396BFF822842CBB00C8ED1A /* DeviceHelper.swift in Sources */,
+				F396BFF922842CBB00C8ED1A /* CustomPrint.swift in Sources */,
+				F396BFE822842CBB00C8ED1A /* ReachabilityHelper.swift in Sources */,
+				F396BFD322842CBB00C8ED1A /* FontStyle.swift in Sources */,
+				F396BFD622842CBB00C8ED1A /* UimageViewExtension.swift in Sources */,
+				F396BFE522842CBB00C8ED1A /* SodiumHelper.swift in Sources */,
+				F396BFF022842CBB00C8ED1A /* LocationProfile.swift in Sources */,
+				F396BFEF22842CBB00C8ED1A /* WhereAmI.swift in Sources */,
+				F396BFED22842CBB00C8ED1A /* LockManager.swift in Sources */,
+				F396BFE422842CBB00C8ED1A /* TokenHelper.swift in Sources */,
+				F396B96D228388A900C8ED1A /* RNDoordeckSdk.m in Sources */,
+				F396BFF722842CBB00C8ED1A /* AppStrings.swift in Sources */,
+				F396BFE022842CBB00C8ED1A /* Button.swift in Sources */,
+				F396BFFA22842CBB00C8ED1A /* VerificationViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F396BFC322842CBB00C8ED1A /* LockUnlockScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F396BFC422842CBB00C8ED1A /* Base */,
+			);
+			name = LockUnlockScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		F396BFC522842CBB00C8ED1A /* QuickEntryStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F396BFC622842CBB00C8ED1A /* Base */,
+			);
+			name = QuickEntryStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		58B511ED1A9E6C8500147676 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		58B511EE1A9E6C8500147676 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		58B511F01A9E6C8500147676 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/../../../React/**",
+					"$(SRCROOT)/../../react-native/React/**",
+				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = RNDoordeckSdk;
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "RNDoordeckSdk-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		58B511F11A9E6C8500147676 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/../../../React/**",
+					"$(SRCROOT)/../../react-native/React/**",
+				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = RNDoordeckSdk;
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "RNDoordeckSdk-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		58B511D61A9E6C8500147676 /* Build configuration list for PBXProject "RNDoordeckSdk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				58B511ED1A9E6C8500147676 /* Debug */,
+				58B511EE1A9E6C8500147676 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		58B511EF1A9E6C8500147676 /* Build configuration list for PBXNativeTarget "RNDoordeckSdk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				58B511F01A9E6C8500147676 /* Debug */,
+				58B511F11A9E6C8500147676 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 58B511D31A9E6C8500147676 /* Project object */;
+}
