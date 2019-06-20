@@ -8,7 +8,13 @@ CocaoPods
 
 ## Getting started
 
-`$ npm install @doordeck/react-native-doordeck-sdk --save`
+1. Install via npm
+
+	`$ npm install @doordeck/react-native-doordeck-sdk --save`
+
+2. Link react-native files
+
+	`$ react-native link @doordeck/react-native-doordeck-sdk`
 
 ### Mostly automatic installation
 
@@ -47,7 +53,26 @@ Coming soon - see manual install for now
 
 #### Android
 
-Coming soon
+1. Edit your app `gradle` file: 
+
+		minSdkVersion 21
+		android {
+			packagingOptions {
+				pickFirst("META-INF/atomicfu.kotlin_module")
+			}
+		}
+		repositories {
+			maven { url "https://jitpack.io" }
+		}
+
+2. Add following to your `gradle.properties`
+
+		android.useAndroidX=true
+		android.enableJetifier=true
+
+3.  To run your app, type `$ react-native run-android`
+
+
 
 
 ## Usage
