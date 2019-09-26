@@ -25,10 +25,11 @@ Coming soon - see manual install for now
 
 #### iOS
 1. Open your `.xcworkspace` file in your `/ios` folder. If you do not have a .xcworkspace, open the `.xcodeproj` file.
-2. In XCode, in the project navigator, right click `[your project's name folder]` ➜ `Add Files to [your project's name]`.
-3. Go to one folder up and navigate to `node_modules/@doordeck/react-native-doordeck-sdk/ios` and add folder `doordeck-sdk`.
-4. In XCode, in the project navigator, select your project. Set your Swift Language Version to `Swift 5` in your project's `Build Settings` ➜ `Swift Language Version`.
-5. Add pod dependencies:
+2. In XCode, remove the library with the name RNDoordeck (Check under Libraries and Recovered References). This library is auto added by React Native link but won't work due to Pod dependencies.
+3. Let's add the library manually now. In the project navigator, right click `[your project's name folder]` ➜ `Add Files to [your project's name]`. 
+4. Go to one folder up and navigate to `node_modules/@doordeck/react-native-doordeck-sdk/ios` and add folder `doordeck-sdk`.
+5. In XCode, in the project navigator, select your project. Set your Swift Language Version to `Swift 5` in your project's `Build Settings` ➜ `Swift Language Version`.
+6. Add pod dependencies:
 	Navigate in a terminal to your `[your react native project's folder]` ➜ `/ios`. 
 	If there isn't a podfile you need to set it up by running `$ pod init`.
 	Edit the podfile and add the following lines under # Pods for [your project's name]:
@@ -41,7 +42,7 @@ Coming soon - see manual install for now
 		pod "Sodium", "~> 0.8"
 
 	In terminal run `$ pod install`
-6. Add permissions:
+7. Add permissions:
 	 Add the following to your project plist.
 
 		“Privacy - Camera Usage Description” -> “NSCameraUsageDescription”
@@ -49,7 +50,7 @@ Coming soon - see manual install for now
 		“Privacy - Location When In Use Usage Description” -> “NSLocationAlwaysAndWhenInUseUsageDescription”
 
 	To use NFC, turn it on in your project target settings `Capablities` ➜ `Near Field Communication Tag Reading`
-7. To run your project, open the `.xcworkspace` file (not the .xcodeproj file) in your `/ios` folder and press run (`Cmd+R`).
+8. To run your project, open the `.xcworkspace` file (not the .xcodeproj file) in your `/ios` folder and press run (`Cmd+R`).
 
 #### Android
 
