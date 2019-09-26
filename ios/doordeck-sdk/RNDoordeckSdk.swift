@@ -25,6 +25,10 @@ class RNDoordeckSdk: NSObject {
 }
 
 extension RNDoordeckSdk: DoordeckProtocol {
+  func authenticated() {
+    
+  }
+  
   func verificationNeeded() {
 
   }

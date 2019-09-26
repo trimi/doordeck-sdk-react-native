@@ -12,9 +12,9 @@ class QuickEntryViewController: UIViewController {
     var apiClient: APIClient!
     var certificateChain: CertificateChainClass!
     var delegate: DoordeckProtocol?
+    var controlDelegate: DoordeckControl?
     var readerType: Doordeck.ReaderType = Doordeck.ReaderType.automatic
     var sodium: SodiumHelper!
-    
     
     fileprivate let quickStoryboard = "QuickEntryStoryboard"
     fileprivate let bottomNFCView = "bottomViewNFC"
@@ -23,7 +23,10 @@ class QuickEntryViewController: UIViewController {
     fileprivate let lockUnlockStoryboard =  "LockUnlockScreen"
     fileprivate let lockUnlockIdentifier = "LockUnlock"
     
-    init(_ apiClient: APIClient, chain: CertificateChainClass, sodiumTemp: SodiumHelper) {
+    init(_ apiClient: APIClient,
+         chain: CertificateChainClass,
+         sodiumTemp: SodiumHelper) {
+        
         self.sodium = sodiumTemp
         self.apiClient = apiClient
         self.certificateChain = chain
@@ -43,6 +46,10 @@ class QuickEntryViewController: UIViewController {
     
     func setupUI() {
         view.backgroundColor = .doordeckPrimaryColour()
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return UserDefaults().getDarkUI() ? .lightContent : .default
     }
 }
 
@@ -80,6 +87,7 @@ extension QuickEntryViewController: quickEntryDelegate {
             bottomViewVC.view.frame = self.view.frame
             bottomViewVC.view.layoutIfNeeded()
             bottomViewVC.delegate = self
+            bottomViewVC.controlDelegate = self.controlDelegate
             addChild(bottomViewVC)
             self.view.addSubview(bottomViewVC.view)
             
@@ -98,6 +106,7 @@ extension QuickEntryViewController: quickEntryDelegate {
         bottomViewVC.view.frame = self.view.frame
         bottomViewVC.view.layoutIfNeeded()
         bottomViewVC.delegate = self
+        bottomViewVC.controlDelegate = self.controlDelegate
         addChild(bottomViewVC)
         self.view.addSubview(bottomViewVC.view)
         
@@ -115,9 +124,9 @@ extension QuickEntryViewController: quickEntryDelegate {
         lockMan.findLock(UUID, success: { [weak self] (lock) in
             SDKEvent().event(.RESOLVE_TILE_SUCCESS)
             self?.showLockScreen(lock)
-        }) {
-            //to-do need to do something
+        }) { [weak self] in
             SDKEvent().event(.RESOLVE_TILE_FAILED)
+            self?.showLockScreenFail()
             return
         }
     }
@@ -131,5 +140,14 @@ extension QuickEntryViewController: quickEntryDelegate {
         }
         
     }
+    
+    func showLockScreenFail()  {
+        if let vc = UIStoryboard(name: lockUnlockStoryboard, bundle: nil).instantiateViewController(withIdentifier: lockUnlockIdentifier) as? LockUnlockViewController {
+            vc.certificateChain = self.certificateChain
+            vc.sodium = self.sodium
+            present(vc, animated: true, completion: nil)
+        }
+    }
+    
     
 }

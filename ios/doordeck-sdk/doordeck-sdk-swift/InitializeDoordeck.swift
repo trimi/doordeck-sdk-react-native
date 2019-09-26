@@ -21,6 +21,24 @@ public protocol DoordeckProtocol {
     func newAuthTokenRequired() -> AuthTokenClass
     func verificationNeeded()
     func unlockSuccessful()
+    func authenticated()
+}
+
+protocol DoordeckUI {
+    func openVerificationStoryboard(_ delegate: DoordeckInternalProtocol,
+                                    sdkMode: Bool,
+                                    controlDelegate: DoordeckControl?,
+                                    apiClient:APIClient,
+                                    sodiumHelper: SodiumHelper )
+    
+    func showUnlockScreenSuccess (_ lockManager: LockManager,
+                                  readerType: Doordeck.ReaderType,
+                                  delegate: DoordeckProtocol?,
+                                  controlDelegate: DoordeckControl?,
+                                  apiClient: APIClient,
+                                  chain: CertificateChainClass,
+                                  sodium: SodiumHelper)
+    
 }
 
 protocol DoordeckInternalProtocol {
@@ -28,6 +46,9 @@ protocol DoordeckInternalProtocol {
     func verificationUnsuccessful()
 }
 
+struct DoordeckControl {
+    var showCloseButton: Bool
+}
 
 /**
  `Doordeck` is the main class initialised by the application object.
@@ -57,22 +78,37 @@ public class Doordeck {
     }
     
     public var delegate: DoordeckProtocol?
-    fileprivate var token: AuthTokenClass
-    fileprivate var chain: CertificateChainClass?
-    fileprivate var readerType: ReaderType = ReaderType.automatic
-    fileprivate var currentState: State = State.notAuthenticated
-    fileprivate var apiClient: APIClient!
-    fileprivate var sodium: SodiumHelper!
+    var uiDelegate: DoordeckUI?
+    var token: AuthTokenClass
+    var chain: CertificateChainClass?
+    var readerType: ReaderType = ReaderType.automatic
+    var currentState: State = State.notAuthenticated
+    var apiClient: APIClient!
+    var sodium: SodiumHelper!
+    var doordeckControl: DoordeckControl!
+    var sdk = true
     
-    
-    /// The doordeck init expects an AuthToken, this is something expected from to be retrieved from the host application server,
+
+    /// The doordeck init expects an AuthToken, this is something expected from to be retrieved from the host application server
     ///
-    /// - Parameter token: AuthTokenClass contains user Auth Token.
-    public init(_ token: AuthTokenClass, darkMode: Bool = true) {
+    /// - Parameters:
+    ///   - token: AuthTokenClass contains user Auth Token.
+    ///   - darkMode: shoudl the SDK load in Dark or Light mode
+    ///   - closeButton: When the SDK is not used in a TabBar, you can have close buttons on the VC's
+    public init(_ token: AuthTokenClass,
+                darkMode: Bool = true,
+                closeButton: Bool = false) {
+        
         self.token = token
-        let header = Header().createSDKAuthHeader(.v1, token: token)
-        self.apiClient = APIClient(header, token: token)
+        let header = Header().createSDKAuthHeader(.v1,
+                                                  token: token)
+        
+        self.apiClient = APIClient(header,
+                                   token: token)
+        
         self.sodium = SodiumHelper(token)
+        self.uiDelegate = DoordeckSDKUI()
+        self.doordeckControl = DoordeckControl(showCloseButton: closeButton)
         darkModeActive(darkMode)
     }
     
@@ -89,6 +125,7 @@ public class Doordeck {
         checkTokenIsValid { [weak self] (currentState) in
             switch currentState {
             case .authenticated:
+                self?.delegate?.authenticated()
                 break
             case .notAuthenticated:
                 self?.updateAuthToken(self?.delegate?.newAuthTokenRequired())
@@ -106,17 +143,20 @@ public class Doordeck {
     ///   - readerType: Reader type can be specified to .nfc or .QR Or automatic
     ///   - success: This is called on success of device unlock
     ///   - fail: This is called on fail device unlock
-    public func showUnlockScreen(_ readerType: ReaderType = ReaderType.automatic, success:@escaping () -> Void , fail: @escaping () -> Void)  {
+    public func showUnlockScreen(_ readerType: ReaderType = ReaderType.automatic,
+                                 success:@escaping () -> Void,
+                                 fail: @escaping () -> Void)  {
+        
         self.readerType = readerType
         switch currentState {
         case .authenticated:
             preInitializeShowUnlock(success, fail: fail)
             break
-            
+
         case .notAuthenticated:
             initializeShowUnlock(success, fail: fail)
             break
-            
+
         case .verificationRequired :
             showVerificationScreen(success, fail: fail)
             break
@@ -128,18 +168,19 @@ public class Doordeck {
     /// - Parameters:
     ///   - success: called on success
     ///   - fail: called on failure
-    fileprivate func showVerificationScreen (_ success:() -> Void , fail: () -> Void) {
-        success()
-        guard let view:UIViewController = UIApplication.topViewController() else { return }
-        let storyboard : UIStoryboard = UIStoryboard(name: "VerificationStoryboard", bundle: nil)
-        let vc : VerificationViewController = storyboard.instantiateViewController(withIdentifier: "VerificationNoNavigation") as! VerificationViewController
-        vc.delegate = self
-        vc.apiClient = self.apiClient
-        vc.sodium = self.sodium
+    func showVerificationScreen (_ success:() -> Void,
+                                 fail: () -> Void) {
         
-        let navigationController = UINavigationController(rootViewController: vc)
-        navigationController.isNavigationBarHidden = true
-        view.present(navigationController, animated: true, completion: nil)
+        if #available(iOS 10, *) {
+        success()
+            uiDelegate?.openVerificationStoryboard(self,
+                                                   sdkMode: sdk,
+                                                   controlDelegate: self.doordeckControl,
+                                                   apiClient: self.apiClient,
+                                                   sodiumHelper: self.sodium)
+        } else {
+            return
+        }
     }
     
     /// Show Doordeck reader and unlock UI, authentications have been completed
@@ -147,7 +188,9 @@ public class Doordeck {
     /// - Parameters:
     ///   - success: called on success
     ///   - fail: called on failure
-    fileprivate func preInitializeShowUnlock (_ success:() -> Void , fail: () -> Void) {
+    fileprivate func preInitializeShowUnlock (_ success:() -> Void,
+                                              fail: () -> Void) {
+        
         success()
         self.showUnlockScreenSuccess()
     }
@@ -158,7 +201,9 @@ public class Doordeck {
     /// - Parameters:
     ///   - success: called on success
     ///   - fail: called on failure
-    fileprivate func initializeShowUnlock (_ success:@escaping () -> Void , fail: @escaping () -> Void) {
+    fileprivate func initializeShowUnlock (_ success:@escaping () -> Void,
+                                           fail: @escaping () -> Void) {
+        
         checkTokenIsValid { [weak self] (currentState) in
             switch currentState {
             case .authenticated:
@@ -182,7 +227,7 @@ public class Doordeck {
     /// If a token is invalid the delegate will request a new token from the host app.
     ///
     /// - Parameter token: new AuthTokenClass from the Host application
-    fileprivate func updateAuthToken (_ token: AuthTokenClass?) {
+    func updateAuthToken (_ token: AuthTokenClass?) {
         guard let tokenTemp: AuthTokenClass = token else { return }
         self.token = tokenTemp
         let header = Header().createSDKAuthHeader(.v1, token: self.token)
@@ -190,27 +235,40 @@ public class Doordeck {
         self.sodium = SodiumHelper(self.token)
     }
     
+    /// Return Certificate chain when SDK is being used in different format.
+    ///
+    /// - Parameter Certificate chain
+    func getCertificateChain() -> CertificateChainClass? {
+        guard let chainTemp = self.chain else {
+            return nil
+        }
+        if sdk == false {
+            return chainTemp
+        } else {
+            return nil
+        }
+    }
+    
     /// Show unlock reader, this will be added to the top view controller.
     fileprivate func showUnlockScreenSuccess () {
-        guard let certificateChainCheck: CertificateChainClass = self.chain else {
-            self.currentState = .notAuthenticated
-            self.updateAuthToken(self.delegate?.newAuthTokenRequired())
+        if #available(iOS 10, *) {
+            guard let certificateChainCheck: CertificateChainClass = self.chain else {
+                self.currentState = .notAuthenticated
+                self.updateAuthToken(self.delegate?.newAuthTokenRequired())
+                return
+            }
+            
+            uiDelegate?.showUnlockScreenSuccess(LockManager(self.apiClient),
+                                                readerType: self.readerType,
+                                                delegate: self.delegate,
+                                                controlDelegate: self.doordeckControl,
+                                                apiClient: self.apiClient,
+                                                chain: certificateChainCheck,
+                                                sodium: self.sodium)
+            
+        } else {
             return
         }
-        
-        guard let view:UIViewController = UIApplication.topViewController() else { return }
-        let storyboard : UIStoryboard = UIStoryboard(name: "QuickEntryStoryboard", bundle: nil)
-        let vc : QuickEntryViewController = storyboard.instantiateViewController(withIdentifier: "QuickEntryNoNavigation") as! QuickEntryViewController
-        vc.lockMan = LockManager(self.apiClient)
-        vc.readerType = self.readerType
-        vc.delegate = self.delegate
-        vc.apiClient = self.apiClient
-        vc.certificateChain = certificateChainCheck
-        vc.sodium = self.sodium
-        
-        let navigationController = UINavigationController(rootViewController: vc)
-        navigationController.isNavigationBarHidden = true
-        view.present(navigationController, animated: true, completion: nil)
     }
     
     /// Check if a token is valid, the date of expiry is first checked on device, the device then sends the key to the server on success of token check.
@@ -283,13 +341,15 @@ extension Doordeck: DoordeckInternalProtocol {
         SDKEvent().event(.GET_CERTIFICATE_SUCCESS)
         self.currentState = .authenticated
         self.chain = chain
-        showUnlockScreenSuccess()
+        if sdk {
+            showUnlockScreenSuccess()
+        } else {
+            self.delegate?.authenticated()
+        }
     }
     
     func verificationUnsuccessful() {
         self.currentState = .verificationRequired
     }
-    
-    
 }
 

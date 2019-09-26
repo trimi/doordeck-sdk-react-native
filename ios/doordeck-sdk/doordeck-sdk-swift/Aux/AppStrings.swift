@@ -14,7 +14,7 @@ struct AppStrings {
     static let readerNotSupported: String = NSLocalizedString("Reader not supported by the current device", comment: "")
     static let NFCScanMessage: String = NSLocalizedString("Click to NFC Scan.", comment: "")
     static let touchNFC: String = NSLocalizedString("Touch NFC", comment: "")
-    static let touchNFCMessage: String = NSLocalizedString("Touch the NFC Tile next to the door to unlock", comment: "")
+    static let touchNFCMessage: String = NSLocalizedString("Touch the screen to activate the scanner, Then touch the NFC Tile next to the door to unlock", comment: "")
     
     static let touchQR: String = NSLocalizedString("Scan QR", comment: "")
     static let touchQRMessage: String = NSLocalizedString("Please scan the QR Tile next to the door to unlock", comment: "")
@@ -43,40 +43,4 @@ struct AppStrings {
     static let timeWindowsuccess: String = NSLocalizedString("Timer success", comment: "")
     static let timeWindowFailed: String = NSLocalizedString("Timer failed", comment: "")
     static let other: String = NSLocalizedString("Other errors", comment: "")
-    
-    static func messageForLockProgress(_ progress: LockDevice.currentUnlockProgress) -> String {
-        switch progress {
-        case .lockInitilized:
-            return AppStrings.lockInitilized
-        case .lockConnecting:
-            return AppStrings.lockConnecting
-        case .lockConnected:
-            return AppStrings.lockConnected
-        case .lockDisconnected:
-            return AppStrings.lockDisconnected
-        case .lockOffline:
-            return AppStrings.lockOffline
-        case .lockUnlocked:
-            return AppStrings.lockUnlocked
-        case .unlockSuccess:
-            return AppStrings.unlockSuccess
-        case .unlockFail:
-            return AppStrings.unlockFail
-        case .gpsFailed:
-            return AppStrings.gpsFailed
-        case .gpssuccess:
-            return AppStrings.gpssuccess
-        case .gpsSearching:
-            return AppStrings.gpsSearching
-        case .gpsUnauthorized:
-            return AppStrings.gpsUnauthorized
-        case .timeWindowsuccess:
-            return AppStrings.timeWindowsuccess
-        case .timeWindowFailed:
-            return AppStrings.timeWindowFailed
-        case .other:
-            return AppStrings.other
-        }
-    }
-
 }

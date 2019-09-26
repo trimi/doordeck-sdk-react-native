@@ -6,7 +6,9 @@
 //
 
 import Foundation
+#if os(iOS)
 import AudioToolbox.AudioServices
+#endif
 
 class Util {
     func onMain(_ block: @escaping () -> Void) {
@@ -14,7 +16,9 @@ class Util {
     }
     
     func vibrateNow () {
+#if os(iOS)
         AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+#endif
     }
     
     func isLowPowerModeEnabled() -> Bool {
