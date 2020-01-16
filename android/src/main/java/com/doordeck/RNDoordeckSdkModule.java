@@ -8,6 +8,7 @@ import com.doordeck.sdk.common.events.UnlockCallback;
 import com.doordeck.sdk.common.manager.Doordeck;
 import com.doordeck.sdk.common.manager.ScanType;
 import com.facebook.react.bridge.ReactApplicationContext;
+import com.doordeck.sdk.ui.verify.VerifyDeviceActivity;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 
@@ -28,6 +29,11 @@ public class RNDoordeckSdkModule extends ReactContextBaseJavaModule {
     @ReactMethod
     public void initDoordeck(String authToken) {
         Doordeck.INSTANCE.initialize(getReactApplicationContext(), authToken, false);
+    }
+
+    @ReactMethod
+    public void initDoordeckWithDarkMode(String authToken, boolean darkMode) {
+        Doordeck.INSTANCE.initialize(getReactApplicationContext(), authToken, darkMode);
     }
 
     @ReactMethod
@@ -62,6 +68,11 @@ public class RNDoordeckSdkModule extends ReactContextBaseJavaModule {
             @Override
             public void notAuthenticated() {
 
+            }
+
+            @Override
+            public void verificationNeeded() {
+                VerifyDeviceActivity.Companion.start(getReactApplicationContext());
             }
         });
     }
