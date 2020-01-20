@@ -13,11 +13,13 @@ class RNDoordeckSdk: NSObject {
   }
   
   @objc func showUnlock() {
-    if (doordeck != nil) {
-      doordeck.showUnlockScreen(success: {
-        print("success")
-      }) {
-        print("fail")
+    DispatchQueue.main.async {
+      if (self.doordeck != nil) {
+        self.doordeck.showUnlockScreen(success: {
+          print("success")
+        }) {
+          print("fail")
+        }
       }
     }
   }
