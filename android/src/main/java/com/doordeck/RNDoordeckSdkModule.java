@@ -26,13 +26,11 @@ public class RNDoordeckSdkModule extends ReactContextBaseJavaModule {
         return "RNDoordeckSdk";
     }
 
+    /**
+     ** @param closeButton isn't used but the signature has to match with the Javascript bridge and the iOS SDK
+     **/
     @ReactMethod
-    public void initDoordeck(String authToken) {
-        Doordeck.INSTANCE.initialize(getReactApplicationContext(), authToken, false);
-    }
-
-    @ReactMethod
-    public void initDoordeckWithDarkMode(String authToken, boolean darkMode) {
+    public void initDoordeck(String authToken, boolean darkMode, boolean closeButton) {
         Doordeck.INSTANCE.initialize(getReactApplicationContext(), authToken, darkMode);
     }
 

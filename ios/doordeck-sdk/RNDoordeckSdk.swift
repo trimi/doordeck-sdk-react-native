@@ -5,9 +5,9 @@ class RNDoordeckSdk: NSObject {
   
   private var doordeck: Doordeck! = nil
   
-  @objc func initDoordeck(_ auth: String) {
+  @objc func initDoordeck(_ auth: String, darkMode: Bool = true, closeButton: Bool = false) {
     let authToken = AuthTokenClass(auth)
-    doordeck = Doordeck(authToken)
+    doordeck = Doordeck(authToken, darkMode, closeButton)
     doordeck.delegate = self
     doordeck.Initialize()
   }

@@ -10,7 +10,7 @@
 {
     return YES;
 }
-RCT_EXTERN_METHOD(initDoordeck:(NSString *)auth)
+RCT_EXTERN_METHOD(initDoordeck:(NSString *)auth withDarkMode:(BOOL)darkMode withCloseButton:(BOOL)closeButton)
 RCT_EXTERN_METHOD(showUnlock)
 @end
 
