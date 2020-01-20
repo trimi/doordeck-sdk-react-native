@@ -40,7 +40,7 @@ class ReachabilityHelper {
     
     /// Is there a Data connection
     var isConnected: Bool {
-        return reachability?.connection != Reachability.Connection.unavailable ? true : false
+        return reachability?.connection != Reachability.Connection.none ? true : false
     }
     
     /// Notification of Data drops
