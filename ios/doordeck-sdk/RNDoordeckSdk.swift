@@ -5,19 +5,21 @@ class RNDoordeckSdk: NSObject {
   
   private var doordeck: Doordeck! = nil
   
-  @objc func initDoordeck(_ auth: String) {
+  @objc func initDoordeck(_ auth: String, darkMode: Bool = true, closeButton: Bool = false) {
     let authToken = AuthTokenClass(auth)
-    doordeck = Doordeck(authToken)
+    doordeck = Doordeck(authToken, darkMode: darkMode, closeButton: closeButton)
     doordeck.delegate = self
     doordeck.Initialize()
   }
   
   @objc func showUnlock() {
-    if (doordeck != nil) {
-      doordeck.showUnlockScreen(success: {
-        print("success")
-      }) {
-        print("fail")
+    DispatchQueue.main.async {
+      if (self.doordeck != nil) {
+        self.doordeck.showUnlockScreen(success: {
+          print("success")
+        }) {
+          print("fail")
+        }
       }
     }
   }
