@@ -80,8 +80,21 @@ Coming soon - see manual install for now
 ```javascript
 import doordeckSdk from '@doordeck/react-native-doordeck-sdk';
 
-// Initialise the SDK with your AuthToken
-doordeckSdk.initDoordeck(authToken)
+// Initialise the SDK with your AuthToken and optional parameters
+
+/**
+ * Enables dark mode for iOS
+ * Default is true
+ */
+const darkMode = true
+
+/**
+ * Adds a close button to the NFC view.
+ * Default is false
+ */
+const closeButton = false
+
+doordeckSdk.initDoordeck(authToken, darkMode, closeButton)
 
 // Show unlock screen (NFC/QR reader)
 doordeckSdk.showUnlock()
