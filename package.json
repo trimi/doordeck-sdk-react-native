@@ -1,7 +1,7 @@
 {
   "name": "@doordeck/react-native-doordeck-sdk",
   "title": "React Native Doordeck Sdk",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "React Native wrapper for the Doordeck SDK.",
   "main": "index.js",
   "scripts": {
