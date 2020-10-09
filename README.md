@@ -29,10 +29,11 @@ Coming soon - see manual install for now
 3. Let's add the library manually now. In the project navigator, right click `[your project's name folder]` ➜ `Add Files to [your project's name]`. 
 4. Go to one folder up and navigate to `node_modules/@doordeck/react-native-doordeck-sdk/ios` and add folder `doordeck-sdk`.
 5. In XCode, in the project navigator, select your project. Set your Swift Language Version to `Swift 5` in your project's `Build Settings` ➜ `Swift Language Version`.
-6. Add pod dependencies:
-	Navigate in a terminal to your `[your react native project's folder]` ➜ `/ios`. 
-	If there isn't a podfile you need to set it up by running `$ pod init`.
-	Edit the podfile and add the following lines under # Pods for [your project's name]:
+6. Add pod dependencies (2 options):
+
+    **a)**  Navigate in a terminal to your `[your react native project's folder]` ➜ `/ios`. 
+        If there isn't a podfile you need to set it up by running `$ pod init`.
+        Edit the podfile and add the following lines under # Pods for [your project's name]:
 		
 		platform :ios, "10.0"
 		pod "QRCodeReader.swift", "~> 10.0"
@@ -42,6 +43,19 @@ Coming soon - see manual install for now
 		pod "Sodium", "~> 0.8"
 
 	In terminal run `$ pod install`
+    
+    **b)** Install Via Swift package manager 
+        To add dependencies via SPM, select `File` > `Swift Packages` > `Add Package Dependency`, enter the following repo's download latest and import all associated projects
+        Then, to use it in your source code, add:
+
+        ```
+        https://github.com/yannickl/QRCodeReader.swift.git
+        https://github.com/ashleymills/Reachability.swift
+        https://github.com/Alamofire/Alamofire
+        https://github.com/hyperoslo/Cache
+        https://github.com/jedisct1/swift-sodium
+        ```
+
 7. Add permissions:
 	 Add the following to your project plist.
 

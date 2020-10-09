@@ -22,6 +22,7 @@ class LockUnlockViewController: UIViewController {
     var lockVariable: lockUnlockScreen!
     var certificateChain: CertificateChainClass!
     var sodium: SodiumHelper!
+    var sdk = true
     
     
     fileprivate var countDownTimer: Timer = Timer()
@@ -85,6 +86,10 @@ class LockUnlockViewController: UIViewController {
                 self?.lockSuceesfullyUnlocked(lockDestils.lock)
             }
             
+            if update == .delayUnlock {
+                self?.showWaitScreen(lockDestils.lock.delayUntilUnlock)
+            }
+            
             if update == .unlockFail {
                 self?.showFailedScreen()
             }
@@ -92,16 +97,22 @@ class LockUnlockViewController: UIViewController {
             print(.lock, object: "progress \(update)")
             let updateString = AppStrings.messageForLockProgress(update)
             self?.lockUpdateMessage.attributedText = NSAttributedString.doordeckH2Bold(updateString)
-            }, reset: {
-                self.dismiss(animated: true, completion: {
-                    
-                })
+            }, reset: { [weak self] in
+                self?.dismissMe()
         })
     }
     
     @IBAction func dismissButtonClicked() {
         countDownTimer.invalidate()
-        self.dismiss(animated: false, completion: nil)
+        dismissMe()
+    }
+    
+    func dismissMe() {
+        self.dismiss(animated: true, completion: { [weak self] in
+            if self?.sdk ?? true {
+                doordeckNotifications().dismissLock()
+            }
+        })
     }
     
     func readyDevice(_ lockDestils: lockUnlockScreen) {
@@ -158,6 +169,10 @@ class LockUnlockViewController: UIViewController {
 
 
 extension LockUnlockViewController {
+    private func showWaitScreen (_ delay: Double) {
+        loadingView.addDelayTimer(delay - 1)
+    }
+    
     private func showLoadingScreen () {
         loadingView.addLoadingAnimation()
     }
@@ -165,7 +180,6 @@ extension LockUnlockViewController {
     private func showUnlockedScreen () {
         setNewColour(UIColor.doordeckSuccessGreen())
         loadingView.addSuccessAnimation()
-        
     }
     
     private func showFailedScreen () {

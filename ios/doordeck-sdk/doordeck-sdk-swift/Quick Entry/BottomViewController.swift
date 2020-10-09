@@ -6,7 +6,9 @@
 //
 
 import UIKit
+#if canImport(CoreNFC)
 import CoreNFC
+
 
 protocol quickEntryDelegate {
     func lockDetected(_ UUID: String)
@@ -32,6 +34,8 @@ class BottomViewController: UIViewController {
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(resetShowNFC), name: UIApplication.didEnterBackgroundNotification, object: nil)
         notificationCenter.addObserver(self, selector: #selector(showNFC), name: .showNFCReader, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(resetShowNFC), name: .hideNFCReader, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(showNFC), name: .dismissLockUnlockScreen, object: nil)
         setupUI()
     }
     
@@ -48,9 +52,9 @@ class BottomViewController: UIViewController {
             closeButton.isHidden = true
             closeButton.isEnabled = false
         }
-
+        
     }
-
+    
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
@@ -82,6 +86,9 @@ class BottomViewController: UIViewController {
     @objc func showNFC() {
         if showNFCBool {
             session = NFCNDEFReaderSession(delegate: self, queue: nil, invalidateAfterFirstRead: true)
+            if #available(iOS 12.0, *) {
+                session?.alertMessage = AppStrings.nfcString
+            }
             session?.begin()
             showNFCBool = false
         }
@@ -95,13 +102,13 @@ extension BottomViewController: NFCNDEFReaderSessionDelegate {
             return
         }
         switch readerError.code {
-        case .readerSessionInvalidationErrorFirstNDEFTagRead, .readerSessionInvalidationErrorUserCanceled:
+        case .readerSessionInvalidationErrorFirstNDEFTagRead :
             showNFCBool = true
             break
-        default:
-            Util().onMain {
-                //error
-            }
+        case .readerSessionInvalidationErrorUserCanceled:
+            showNFCBool = false
+            break
+        default: break
         }
     }
     
@@ -114,7 +121,9 @@ extension BottomViewController: NFCNDEFReaderSessionDelegate {
     
     func NFCDetected(_ payloads: [NFCNDEFPayload]) {
         
-        session?.invalidate()
+        
+        self.session?.invalidate()
+        
         for payload in payloads {
             let record = payload
             let payloadTemp = String(data: record.payload, encoding: .utf8) ?? "No payload"
@@ -172,3 +181,5 @@ extension NFCNDEFPayload {
     }
 }
 
+
+#endif
