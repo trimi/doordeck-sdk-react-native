@@ -43,7 +43,7 @@ class LockUnlockViewController: UIViewController {
         self.sodium = sodiumTemp
         self.certificateChain = chain
         self.lockVariable = lockVariableTemp
-        super.init(nibName: nil, bundle: nil)
+        super.init(nibName: nil, bundle: Bundle(for: type(of: self)))
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -170,7 +170,7 @@ class LockUnlockViewController: UIViewController {
 
 extension LockUnlockViewController {
     private func showWaitScreen (_ delay: Double) {
-        loadingView.addDelayTimer(delay - 1)
+        loadingView.addDelayTimer(delay)
     }
     
     private func showLoadingScreen () {
