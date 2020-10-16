@@ -23,16 +23,28 @@ Coming soon - see manual install for now
 ### Manual installation
 
 ### If you were using a version before `1.2.0`
-For iOS, we were using some instructions such as adding some content into your Podfile:
+- For iOS, we were using some instructions such as adding some content into your Podfile:
 
-	platform :ios, "10.0"
-	pod "QRCodeReader.swift", "~> 10.0"
-	pod "ReachabilitySwift", "~> 5.0.0"
-	pod "Alamofire", "~> 4.8"
-	pod "Cache", "~> 5.2"
-	pod "Sodium", "~> 0.8"
+		platform :ios, "10.0"
+		pod "QRCodeReader.swift", "~> 10.0"
+		pod "ReachabilitySwift", "~> 5.0.0"
+		pod "Alamofire", "~> 4.8"
+		pod "Cache", "~> 5.2"
+		pod "Sodium", "~> 0.8"
 
-please remove these lines now and follow the next iOS instructions.
+  please remove these lines now and follow the next iOS instructions.
+ 
+ - Please check if your React Native's project `ios/Podfile` has any reference to the doordeck (pod, path...) and remove it. For example:
+ 
+		 target 'YourProject' do
+		  config = use_native_modules!
+		
+		  use_react_native!(:path => config["reactNativePath"])
+
+		  pod 'doordeck-sdk-swift', :path => '../node_modules/@doordeck/react-native-doordeck-sdk' ## remove this line
+		  ...
+
+		  # Enables Flipper.
 
 #### iOS
 1. In XCode, in the project navigator, select your project. Set your Swift Language Version to `Swift 5` in your project's `Build Settings` ➜ `Swift Language Version`.
