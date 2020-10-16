@@ -22,41 +22,22 @@ Coming soon - see manual install for now
 
 ### Manual installation
 
+### If you were using a version before `1.2.0`
+For iOS, we were using some instructions such as adding some content into your Podfile:
+
+	platform :ios, "10.0"
+	pod "QRCodeReader.swift", "~> 10.0"
+	pod "ReachabilitySwift", "~> 5.0.0"
+	pod "Alamofire", "~> 4.8"
+	pod "Cache", "~> 5.2"
+	pod "Sodium", "~> 0.8"
+
+please remove these lines now and follow the next iOS instructions.
 
 #### iOS
-1. Open your `.xcworkspace` file in your `/ios` folder. If you do not have a .xcworkspace, open the `.xcodeproj` file.
-2. In XCode, remove the library with the name RNDoordeck (Check under Libraries and Recovered References). This library is auto added by React Native link but won't work due to Pod dependencies.
-3. Let's add the library manually now. In the project navigator, right click `[your project's name folder]` ➜ `Add Files to [your project's name]`. 
-4. Go to one folder up and navigate to `node_modules/@doordeck/react-native-doordeck-sdk/ios` and add folder `doordeck-sdk`.
-5. In XCode, in the project navigator, select your project. Set your Swift Language Version to `Swift 5` in your project's `Build Settings` ➜ `Swift Language Version`.
-6. Add pod dependencies (2 options):
-
-    **a)**  Navigate in a terminal to your `[your react native project's folder]` ➜ `/ios`. 
-        If there isn't a podfile you need to set it up by running `$ pod init`.
-        Edit the podfile and add the following lines under # Pods for [your project's name]:
-		
-		platform :ios, "10.0"
-		pod "QRCodeReader.swift", "~> 10.0"
-		pod "ReachabilitySwift", "~> 5.0.0"
-		pod "Alamofire", "~> 4.8"
-		pod "Cache", "~> 5.2"
-		pod "Sodium", "~> 0.8"
-
-	In terminal run `$ pod install`
-    
-    **b)** Install Via Swift package manager 
-        To add dependencies via SPM, select `File` > `Swift Packages` > `Add Package Dependency`, enter the following repo's download latest and import all associated projects
-        Then, to use it in your source code, add:
-
-        ```
-        https://github.com/yannickl/QRCodeReader.swift.git
-        https://github.com/ashleymills/Reachability.swift
-        https://github.com/Alamofire/Alamofire
-        https://github.com/hyperoslo/Cache
-        https://github.com/jedisct1/swift-sodium
-        ```
-
-7. Add permissions:
+1. In XCode, in the project navigator, select your project. Set your Swift Language Version to `Swift 5` in your project's `Build Settings` ➜ `Swift Language Version`.
+2. Use the minimum iOS version as '10.3'. Add in your Podfile: `platform :ios, "10.3"`. Then run `pod install`
+3. Add permissions:
 	 Add the following to your project plist.
 
 		“Privacy - Camera Usage Description” -> “NSCameraUsageDescription”
@@ -64,7 +45,7 @@ Coming soon - see manual install for now
 		“Privacy - Location When In Use Usage Description” -> “NSLocationAlwaysAndWhenInUseUsageDescription”
 
 	To use NFC, turn it on in your project target settings `Capablities` ➜ `Near Field Communication Tag Reading`
-8. To run your project, open the `.xcworkspace` file (not the .xcodeproj file) in your `/ios` folder and press run (`Cmd+R`).
+4. To run your project, open the `.xcworkspace` file (not the .xcodeproj file) in your `/ios` folder and press run (`Cmd+R`).
 
 #### Android
 
