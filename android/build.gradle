@@ -58,7 +58,7 @@ allprojects {
 
 dependencies {
     implementation 'com.facebook.react:react-native:+'
-    implementation 'com.github.doordeck:doordeck-sdk-java:2.0.2'
+    implementation 'com.github.doordeck:doordeck-sdk-java:2.0.3'
     implementation 'com.google.guava:guava:28.0-android'
 }
 
