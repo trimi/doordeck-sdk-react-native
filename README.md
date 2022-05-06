@@ -63,7 +63,7 @@ Coming soon - see manual install for now
 
 1. Edit your app `gradle` file: 
 
-		minSdkVersion 21
+		minSdkVersion 23
 		android {
 			packagingOptions {
 				pickFirst("META-INF/atomicfu.kotlin_module")
@@ -78,11 +78,7 @@ Coming soon - see manual install for now
 		android.useAndroidX=true
 		android.enableJetifier=true
 
-3.	If you're targeting minSdkVersion lower than 21, add following to your AndroidManifest.xml (inside the <manifest> tag):
-
-		<uses-sdk tools:overrideLibrary="com.google.zxing.client.android" />
-
-4.  To run your app, type `$ react-native run-android`
+3.  To run your app, type `$ react-native run-android`
 
 
 

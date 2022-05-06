@@ -77,7 +77,7 @@ public class RNDoordeckSdkModule extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void logout() {
-        Doordeck.INSTANCE.logout();
+        Doordeck.INSTANCE.logout(getReactApplicationContext());
     }
 
 }
