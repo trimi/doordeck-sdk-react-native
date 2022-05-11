@@ -1,41 +1,38 @@
-#
-# To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html.
-# Run `pod lib lint doordeck_flutter_plugin.podspec' to validate before publishing.
-#
 Pod::Spec.new do | spec |
 
-    spec.platform = :ios
-    spec.ios.deployment_target = '10.0'
-    spec.name = "doordeck-sdk-swift"
-    spec.social_media_url = "https://twitter.com/doordeck"
-    spec.summary = "Doordeck allows you to unlock your access control doors via your phone, visit Doordeck.com for more details"
-    spec.requires_arc = true
-    spec.version = "1.7.2"
+  spec.platform = :ios
+  spec.ios.deployment_target = '10.0'
+  spec.name = "doordeck-sdk-swift"
+  spec.social_media_url = "https://twitter.com/doordeck"
+  spec.summary = "Doordeck allows you to unlock your access control doors via your phone, visit Doordeck.com for more details"
+  spec.requires_arc = true
   
-    spec.license = { :type => "Apache", :file => "LICENSE" }
   
-    spec.author = { "Doordeck" => "support@doordeck.com" }
+  spec.version = "0.0.3"
   
-    spec.homepage = "https://github.com/doordeck/doordeck-sdk-swift"
+  spec.license = { :type => "Apache", :file => "LICENSE" }
   
-    spec.source = { :git => "https://github.com/doordeck/doordeck-sdk-swift.git" , 
-                 :tag => "#{spec.version}" }
+  spec.author = { "Doordeck" => "support@doordeck.com" }
   
-    spec.ios.framework = "UIKit"
+  spec.homepage = "https://github.com/doordeck/doordeck-sdk-swift"
   
-    spec.source_files        = 'doordeck-sdk/**/*.{h,m,swift,xib,xcassets,png,jpeg,jpg}'
+  spec.source = { :git => "https://github.com/doordeck/doordeck-sdk-swift.git" , 
+               :tag => "#{spec.version}" }
   
-    spec.resources           = 'doordeck-sdk/**/*.{cer,bundle,storyboard}'
+  spec.ios.framework = "UIKit"
+  spec.dependency 'Alamofire', '~> 4.8'
+  spec.dependency 'Cache', '~> 5.2'
+  spec.dependency 'QRCodeReader.swift', '~> 10.0'
+  spec.dependency 'ReachabilitySwift', '~> 4.3'
+  spec.dependency 'SwiftyRSA', '~> 1.5'
   
-    spec.pod_target_xcconfig = {"PRODUCT_BUNDLE_IDENTIFIER" => "com.doordeck.doordeck-sdk-swiftTests" ,"DEVELOPMENT_TEAM" => "Doordeck limited"}
-    spec.swift_version       = '5.0'
+  spec.source_files = "doordeck-sdk-swift/**/*.{h,swift,storyboard,xib,xcassets,plist,png,jpeg,jpg}"
   
-    spec.dependency 'React'
-    spec.dependency 'Alamofire', '~> 5.2.2'
-    spec.dependency 'Cache', '~> 5.3.0'
-    spec.dependency 'QRCodeReader.swift', '~> 10.1.0'
-    spec.dependency 'ReachabilitySwift', '~> 5.0.0'
-    spec.dependency 'Sodium', '~> 0.8.0'
+  spec.pod_target_xcconfig = {"PRODUCT_BUNDLE_IDENTIFIER" => "com.doordeck.doordeck-sdk-swiftTests" ,"DEVELOPMENT_TEAM" => "Doordeck limited"}
+  
+  #spec.resources = "doordeck-sdk-swift/**/*.{png,jpeg,jpg,storyboard,xib,xcassets}"
+  
+  spec.swift_version = '4.2'
   
   end
   
