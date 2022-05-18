@@ -13,7 +13,7 @@
         <!--Verification View Controller-->
         <scene sceneID="1u0-Vs-B4g">
             <objects>
-                <viewController storyboardIdentifier="VerificationNoNavigation" useStoryboardIdentifierAsRestorationIdentifier="YES" id="oSH-Yq-yNP" customClass="VerificationViewController" customModule="doordeck_sdk_swift_sample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VerificationNoNavigation" useStoryboardIdentifierAsRestorationIdentifier="YES" id="oSH-Yq-yNP" customClass="VerificationViewController" customModule="doordeck_sdk_swift" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7Ac-Bm-GLK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
