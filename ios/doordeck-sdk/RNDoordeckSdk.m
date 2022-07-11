@@ -11,7 +11,5 @@
     return YES;
 }
 RCT_EXTERN_METHOD(initDoordeck:(NSString *)auth darkMode:(BOOL)darkMode closeButton:(BOOL)closeButton)
-RCT_EXTERN_METHOD(showUnlock)
+RCT_EXTERN_METHOD(showUnlock:(BOOL)isNfc)
 @end
-
-

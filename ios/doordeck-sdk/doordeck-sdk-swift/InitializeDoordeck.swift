@@ -144,7 +144,7 @@ public class Doordeck {
     ///   - readerType: Reader type can be specified to .nfc or .QR Or automatic
     ///   - success: This is called on success of device unlock
     ///   - fail: This is called on fail device unlock
-    public func showUnlockScreen(_ readerType: ReaderType = ReaderType.automatic,
+    public func showUnlockScreen(_ readerType: ReaderType,
                                  success:@escaping () -> Void,
                                  fail: @escaping () -> Void)  {
         

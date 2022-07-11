@@ -12,10 +12,10 @@ class RNDoordeckSdk: NSObject {
     doordeck.Initialize()
   }
   
-  @objc func showUnlock() {
+  @objc func showUnlock(_ isNfc: Bool) {
     DispatchQueue.main.async {
       if (self.doordeck != nil) {
-        self.doordeck.showUnlockScreen(success: {
+        self.doordeck.showUnlockScreen(isNfc ? .nfc : .qr,  success: {
           print("success")
         }) {
           print("fail")
