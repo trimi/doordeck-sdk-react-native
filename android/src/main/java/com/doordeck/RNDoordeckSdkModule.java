@@ -27,7 +27,8 @@ public class RNDoordeckSdkModule extends ReactContextBaseJavaModule {
     }
 
     /**
-     ** @param closeButton isn't used but the signature has to match with the Javascript bridge and the iOS SDK
+     ** @param closeButton isn't used but the signature has to match with the
+     *                    Javascript bridge and the iOS SDK
      **/
     @ReactMethod
     public void initDoordeck(String authToken, boolean darkMode, boolean closeButton) {
@@ -40,12 +41,12 @@ public class RNDoordeckSdkModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void showUnlock() {
+    public void showUnlock(boolean isNfc) {
         ScanType type = ScanType.QR;
         NfcManager manager = (NfcManager) getReactApplicationContext().getSystemService(Context.NFC_SERVICE);
         NfcAdapter adapter = manager.getDefaultAdapter();
         if (adapter != null && adapter.isEnabled()) {
-            type = ScanType.NFC;
+            type = isNfc ? ScanType.NFC : ScanType.QR;
         }
         Doordeck.INSTANCE.showUnlock(getReactApplicationContext(), type, new UnlockCallback() {
             @Override
@@ -77,7 +78,7 @@ public class RNDoordeckSdkModule extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void logout() {
-        Doordeck.INSTANCE.logout(getReactApplicationContext());
+        Doordeck.INSTANCE.logout();
     }
 
 }
