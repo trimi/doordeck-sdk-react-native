@@ -39,41 +39,42 @@ public class RNDoordeckSdkModule extends ReactContextBaseJavaModule {
         Doordeck.INSTANCE.updateToken(authToken, reactContext);
     }
 
-    @ReactMethod
-     public void showUnlock(boolean isNfc) {
-        ScanType type = ScanType.QR;
-        NfcManager manager = (NfcManager) getReactApplicationContext().getSystemService(Context.NFC_SERVICE);
-        NfcAdapter adapter = manager.getDefaultAdapter();
-        if (adapter != null && adapter.isEnabled()) {
-            type = isNfc ? ScanType.NFC : ScanType.QR;
+    public boolean showUnlock(boolean isNfc, final UnlockCallback callback) {
+            ScanType type = ScanType.QR;
+            NfcManager manager = (NfcManager) getReactApplicationContext().getSystemService(Context.NFC_SERVICE);
+            NfcAdapter adapter = manager.getDefaultAdapter();
+            if (adapter != null && adapter.isEnabled()) {
+                type = isNfc ? ScanType.NFC : ScanType.QR;
+            }
+            Doordeck.INSTANCE.showUnlock(getReactApplicationContext(), type, new UnlockCallback() {
+                @Override
+                public void unlockSuccess() {
+                    callback.unlockSuccess(true); 
+                }
+
+                @Override
+                public void unlockFailed() {
+                    callback.unlockSuccess(false); 
+                }
+
+                @Override
+                public void invalidAuthToken() {
+                    callback.invalidAuthToken();
+                }
+
+                @Override
+                public void notAuthenticated() {
+                    callback.notAuthenticated();
+                }
+
+                @Override
+                public void verificationNeeded() {
+                    callback.verificationNeeded();
+                }
+            });
+            return true; // Assuming always returns true here, adjust as per your logic
         }
-        Doordeck.INSTANCE.showUnlock(getReactApplicationContext(), type, new UnlockCallback() {
-            @Override
-            public void unlockSuccess() {
 
-            }
-
-            @Override
-            public void unlockFailed() {
-
-            }
-
-            @Override
-            public void invalidAuthToken() {
-
-            }
-
-            @Override
-            public void notAuthenticated() {
-
-            }
-
-            @Override
-            public void verificationNeeded() {
-                VerifyDeviceActivity.Companion.start(getReactApplicationContext());
-            }
-        });
-    }
 
     @ReactMethod
     public void logout() {
